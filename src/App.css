@@ -103,3 +103,9 @@ h1,h2,h3,h4,h5,h6,p,span{
 .comment-text span{
   font-size: 0.75rem;
 }
+
+.error{
+  color: red;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

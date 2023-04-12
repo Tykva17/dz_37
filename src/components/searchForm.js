@@ -6,8 +6,12 @@ function SearchForm({searchPost,dataPost}){
 
     const handleSubmit = (el) => {
         el.preventDefault();
-        searchPost(inputValue).then( data => dataPost(data));
-        setInputValue('');
+        if(parseInt(inputValue) > 100 || parseInt(inputValue) < 0 || isNaN(parseInt(inputValue)) === true){
+            dataPost([])
+        }else {
+            searchPost(inputValue).then(data => dataPost(data));
+            setInputValue('');
+        }
     }
 
     const handleChange = (el) => {

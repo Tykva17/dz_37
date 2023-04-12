@@ -49,13 +49,17 @@ function App() {
           <div>
               {
                   postList.map((item) => {
-                      // console.log(item);
-                      return <PostItem
-                              searchComments={searchComments}
-                              dataPostComments={dataPostComments}
-                              key={item.id}
-                              item={item}
-                              />
+                      console.log(item);
+                      if(item.length < 1){
+                          return <p key='1' className='error'>wrong value! try from 1 to 100</p>
+                      }else {
+                          return <PostItem
+                                  searchComments={searchComments}
+                                  dataPostComments={dataPostComments}
+                                  key={item.id}
+                                  item={item}
+                                  />
+                      }
                   })
               }
           </div>
